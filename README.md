@@ -5,7 +5,9 @@ This is a pairs trading intraday strategy that uses LSTM based price forecasts a
 
 ## GIT related stuff
 Try using GPT to get a basic tutorial on git. We are not getting crazy with git related stuff just the basics is all that is required. The reason I am using GIT is because it will massively help with the collaboration and we can individually work on our parts without relying on others in the team. The most common commands that we will be using are 
+
 	git branch | git checkout branch_name | git commit -m "message" | git push origin <branch-name>.
+	
 1. Clone this repository to your workplace folder and make sure that you have the master branch. Use cmd > git bash. DO NOT download as zip and extract.
 2. Create a new branch for your work. For eg: if your name is Ananya branch should be feature/Ananya-feature-you-are-working-on. DO NOT forget to switch to your branch locally. DO NOT work on the master branch directly
 3. Make changes in the ipynb file in your branch on your computer locally and commit them using git commit -m "message". Please make sure the message is short and sweet yet contains the most important characteristics of the change you made. 
