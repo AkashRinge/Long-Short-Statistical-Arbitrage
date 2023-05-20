@@ -43,14 +43,16 @@ I have done preprocessing of the data, building the base models, setting up the 
 Post the QAM lecture with guest speaker, I can see how Prof. Bernard wont be too much of a fan of neural networks, since its a big black box to whats actually happening. We want to incorporate some other modeling technique that we have done in the QAM assignments into the trading strategy apart from neural networks. One of us needs to think and analyze how to fit that into this project and come up with a proposal.
 	
 #### Generating Trading Signals (Partial)
-	Currently this is the trading signal algorithm that I have come up with. 
-    1. Identify undervalued and overvalued stocks based on trade volume, last close price, 20 day moving average using the LSTM model
-    2. If the forecasted price for the day is above 1x forecasted volatility we create a long position in the stock and a short position in its pair in ratio of their snp weights
-    3. If the forecasted price for the day is 1x forecasted volatility below we create a short position in the stock and a long position in its pair in ratio of their snp weights
-    4. We add the two positions to a position table and associate each other using a pair id.
-    5. The target price for the trade is the forecasted price. We check for this price every hour. We square off both the position when the price moves above (below for short) the forecast
-    6. We keep a stop loss of 3%. If our net pair trade value falls below 3% we square off the position and remove it from the position table
-	I want one of us (preferably someone other than me better with trading and finance) to analyze and understand whether this is the correct approach because this is something that I have pulled out of my ***. There HAS TO be a better way to use price and volatility forecasts to come up with a trading signal. Try asking GPT how to do that and come up with a better strategy. If  after resaerching you think my algorithm looks fine we can delegate the work to implement it.
+Currently this is the trading signal algorithm that I have come up with. 
+
+1. Identify undervalued and overvalued stocks based on trade volume, last close price, 20 day moving average using the LSTM model
+2. If the forecasted price for the day is above 1x forecasted volatility we create a long position in the stock and a short position in its pair in ratio of their snp weights
+3. If the forecasted price for the day is 1x forecasted volatility below we create a short position in the stock and a long position in its pair in ratio of their snp weights
+4. We add the two positions to a position table and associate each other using a pair id.
+5. The target price for the trade is the forecasted price. We check for this price every hour. We square off both the position when the price moves above (below for short) the forecast
+6. We keep a stop loss of 3%. If our net pair trade value falls below 3% we square off the position and remove it from the position table
+
+I want one of us (preferably someone other than me better with trading and finance) to analyze and understand whether this is the correct approach because this is something that I have pulled out of my ***. There HAS TO be a better way to use price and volatility forecasts to come up with a trading signal. Try asking GPT how to do that and come up with a better strategy. If  after resaerching you think my algorithm looks fine we can delegate the work to implement it.
 
 ### Calculating portfolio metrics
 	I want one of us to build a very robust framework. This framework should be standalone. Try to understand how the output data from the trading strategy looks like and to calculate metrics - total trades, sharpe ratio, strategy capacity, win percentage, drawdown compared to SNP, information ratio, treynor ratio, profit-loss ratio, average win, turnover, annualized return, VaR, Expected Shortfall. Build it in such a manner that there is no dependency of you or for you on someone working with other components.
