@@ -55,5 +55,8 @@ Currently this is the trading signal algorithm that I have come up with.
 
 I want one of us (preferably someone other than me better with trading and finance) to analyze and understand whether this is the correct approach because this is something that I have pulled out of my ***. There HAS TO be a better way to use price and volatility forecasts to come up with a trading signal. Try asking GPT how to do that and come up with a better strategy. If  after resaerching you think my algorithm looks fine we can delegate the work to implement it.
 
+#### Resolving some issues with the project
+There are some problems in my approach for eg: I am currently introducing a forward bias into the data analysis part which is wrong. I want another pair of eyes to look at this stuff and tell me potential problems with what I am doing, or ways to better do things I am already doing.
+
 #### Calculating portfolio metrics
 I want one of us to build a very robust framework. This framework should be standalone. Try to understand how the output data from the trading strategy looks like and to calculate metrics - total trades, sharpe ratio, strategy capacity, win percentage, drawdown compared to SNP, information ratio, treynor ratio, profit-loss ratio, average win, turnover, annualized return, VaR, Expected Shortfall. Build it in such a manner that there is no dependency of you or for you on someone working with other components.
