@@ -28,16 +28,31 @@ The goal of this project is to perform long-short statistical arbitrage using pa
 ## Components that we have completed
 	
 #### Identifying the right stocks
-I have already built the framework to correctly identify the most volatile stocks from SnP and assign them in pairs based on the correlation of their returns.
+	I have already built the framework to correctly identify the most volatile stocks from SnP and assign them in pairs based on the correlation of their returns.
 	
-#### Forecasting the prices and volatility
-I have done the major chunk of work for us by successfully analyzing the patterns in volatility and having forecasting the prices and volatility for the stocks.
+#### Generating trading signals (Partial)
+	I have done the major chunk of work for us by successfully analyzing the patterns in volatility and having forecasting the prices and volatility for the stocks.
 
 #### Boilerplate stuff done
-I have done preprocessing of the data, building the base models, setting up the framework for all of us to work within.
+	I have done preprocessing of the data, building the base models, setting up the framework for all of us to work within.
 	
 ## Components that we need to work on
 	
 #### Incorporating something more the RNN
-Post the QAM lecture with guest speaker, I can see how Prof. Bernard wont be too much of a fan of neural networks, since its a big black box to whats actually happening. We want to incorporate some other modeling technique that we have done in the QAM assignments into the trading strategy apart from neural networks. One of us needs to think and analyze how to fit that into this project and come up with a proposal.
+	Post the QAM lecture with guest speaker, I can see how Prof. Bernard wont be too much of a fan of neural networks, since its a big black box to whats actually happening. We want to incorporate some other modeling technique that we have done in the QAM assignments into the trading strategy apart from neural networks. One of us needs to think and analyze how to fit that into this project and come up with a proposal.
+	
+#### Generating Trading Signals (Partial)
+	Currently this is the trading signal algorithm that I have come up with. 
+    1. Identify undervalued and overvalued stocks based on trade volume, last close price, 20 day moving average using the LSTM model
+    2. If the forecasted price for the day is above 1x forecasted volatility we create a long position in the stock and a short position in its pair in ratio of their snp weights
+    3. If the forecasted price for the day is 1x forecasted volatility below we create a short position in the stock and a long position in its pair in ratio of their snp weights
+    4. We add the two positions to a position table and associate each other using a pair id.
+    5. The target price for the trade is the forecasted price. We check for this price every hour. We square off both the position when the price moves above (below for short) the forecast
+    6. We keep a stop loss of 3%. If our net pair trade value falls below 3% we square off the position and remove it from the position table
+	I want one of us (preferably someone other than me better with trading and finance) to analyze and understand whether this is the correct approach because this is something that I have pulled out of my ***. There HAS TO be a better way to use price and volatility forecasts to come up with a trading signal. Try asking GPT how to do that and come up with a better strategy.
+
+### Calculating portfolio metrics
+	I want one of us to build a very robust framework. This framework should be standalone. Try to understand how the output data from the trading strategy looks like and to calculate metrics - total trades, sharpe ratio, strategy capacity, win percentage, drawdown compared to SNP, information ratio, treynor ratio, profit-loss ratio, average win, turnover, annualized return, VaR, Expected Shortfall. Build it in such a manner that there is no dependency of you or for you on someone working with other components.
+	
+
 
