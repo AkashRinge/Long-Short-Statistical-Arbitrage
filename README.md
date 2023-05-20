@@ -12,6 +12,7 @@ Try using GPT to get a basic tutorial on git. We are not getting crazy with git 
 2. Create a new branch for your work. For eg: if your name is Ananya branch should be feature/Ananya-feature-you-are-working-on. DO NOT forget to switch to your branch locally. DO NOT work on the master branch directly
 3. Make changes in the ipynb file in your branch on your computer locally and commit them using git commit -m "message". Please make sure the message is short and sweet yet contains the most important characteristics of the change you made. 
 4. Push the changes using git push to your branch. Once you are ready with your change create a pull request from your branch to master. Create a write up of the changes you made. We will do peer review with the team and after resolving comments we can merge your changes into the main project (master branch). If you run into errors or are stuck somewhere let me know.
+5. Once you merge your changes into the master branch please update everyone on the whatsapp group letting them know that you have made changes. Everyone is supposed to take a pull from master at this moment. If there are conflicts you might need to resolve them. This part of collaboration will come at a later stage and i will help you navigate through this.
   
 ## Outline of the Methodology
 The goal of this project is to perform long-short statistical arbitrage using pairs trading on the most volatile stocks of SnP500 using their weights as reference for trading. As of now we have a Python script that involves procuring data, performing pattern analysis, and implementing a trading strategy using the obtained data. Let's go through the main methodology of the project step by step: 
@@ -56,8 +57,8 @@ Currently this is the trading signal algorithm that I have come up with.
 
 I want one of us (preferably someone other than me better with trading and finance) to analyze and understand whether this is the correct approach because this is something that I have pulled out of my ***. There HAS TO be a better way to use price and volatility forecasts to come up with a trading signal. Try asking GPT how to do that and come up with a better strategy. If  after resaerching you think my algorithm looks fine we can delegate the work to implement it.
 
+#### Resolving some issues with the project
+There are some problems in my approach for eg: I am currently introducing a forward bias into the data analysis part which is wrong. I want another pair of eyes to look at this stuff and tell me potential problems with what I am doing, or ways to better do things I am already doing.
+
 #### Calculating portfolio metrics
 I want one of us to build a very robust framework. This framework should be standalone. Try to understand how the output data from the trading strategy looks like and to calculate metrics - total trades, sharpe ratio, strategy capacity, win percentage, drawdown compared to SNP, information ratio, treynor ratio, profit-loss ratio, average win, turnover, annualized return, VaR, Expected Shortfall. Build it in such a manner that there is no dependency of you or for you on someone working with other components.
-	
-
-
